@@ -19,6 +19,7 @@ services:
     expose:
       - "8080"
       - "9092"
+
     environment:
       KAFKA_ADVERTISED_HOST_NAME: 172.25.0.12
       KAFKA_ZOOKEEPER_CONNECT: 172.25.0.11:2181
@@ -110,6 +111,10 @@ services:
       - "8080"
       - "8443"
       - "4040"
+    ports:
+      - 8080:8080
+      - 8443:8443
+      - 4040:4040
     volumes:
       - ./zeppelin/datadrive:/datadrive
       - ./zeppelin/pyspark-notebooks:/zeppelin/notebook
